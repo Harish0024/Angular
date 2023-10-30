@@ -1,0 +1,161 @@
+<router-outlet></router-outlet>
+<b>Select the given theme</b>
+<select size="1" [(ngModel)]="themeName" >
+  <option value="ocean">Ocean</option>
+  <option value="forest">Forest</option>
+  <option value="cloud">Cloud</option>
+</select>
+<div [class]="themeName" [style.width]="size+'px'" [style.height]="size+'px'">
+ 
+  
+<b>We are health care organization</b>
+</div>
+<select size="1" [(ngModel)]="color">
+<option value="red">red</option>
+<option value="green">green</option>
+<option value="blue">blue</option>
+</select>
+
+<input  type="text" [class]="color"/><br/>
+<b>Select the size</b><input type="number" min="100" max="500" step="20" [(ngModel)]="size"/><br>
+<div align="center">
+  
+<div [class]="themeName" [style.width]="size+'px'" [style.height]="size+'px'">
+ 
+  
+  <b>We are health care organization</b>
+
+
+<br>
+</div>
+<!--property binding-->
+
+
+
+
+<div align="center">
+<form name="myForm" (submit)="sendData()">
+FirstName<input type="text" name="firstname"[(ngModel)]="udata.firstName" (ngModelChange)="check()" />
+
+<i *ngIf="!udata.firstName" style="color: red;">
+  Please enter your first name.
+</i>
+<br/>  
+LastName<input type="text" name="lastname" [(ngModel)]="udata.lastName" />
+<i *ngIf="!udata.lastName" style="color: red;">
+  Please enter your last name.
+</i>
+
+<br/>
+<input type="checkbox" name="enabledisable" [(ngModel)]="enableDisable"/>Agree to terms and Conditions<br>
+<input type="button" value="save data" name="save"
+(click)="savedata($event)"/>&nbsp;&nbsp;
+<input type="reset" value="RESET" [disabled]="!udata.firstName && !udata.lastName" 
+/>
+<input type="submit" value="submit form"/>
+</form>
+
+
+</div>
+<b>List odf users</b>
+<!--li *ngFor="let user of UserList">&nbsp;
+  &nbsp;{{user.location}}&nbsp;
+  {{user.company}}</li-->
+
+  <table border>
+    <thead>
+      <tr *ngFor="let user of UserList">
+       <td>{{user.firstName}}</td> 
+       <td>{{user.lastName}}</td>
+        <td>{{user.location}}</td>
+        <td>{{user.company}}</td>
+      </tr>
+    </thead>
+  </table>
+
+
+
+<select size="1" [(ngModel)]="color">
+<option value="red">red</option>
+<option value="green">green</option>
+<option value="blue">blue</option>
+</select>
+
+<select size="1" [(ngModel)]="state" >
+  <option value="tn">TAMIL NADU</option>
+  <option value="kl">KERALA</option>
+  <option value="ap">AP</option>
+</select>
+
+<div *ngIf="state === 'tn'">
+  <select size="1" [(ngModel)]="city">
+    <option value="ch">Chennai</option>
+    <option value="sa">Salem</option>
+    <option value="trichy">Trichy</option>
+  </select>
+</div>
+
+<div *ngIf="state === 'kl'">
+  <select size="1" [(ngModel)]="city">
+    <option value="ch">varkala</option>
+    <option value="sa">kochi</option>
+    <option value="trichy">thrissur</option>
+  </select>
+</div>
+
+<div *ngIf="state === 'ap'">
+  <select size="1" [(ngModel)]="city">
+    <option value="ch">yanam</option>
+    <option value="sa">tirupati</option>
+    <option value="trichy">vijayawada</option>
+  </select>
+</div>
+</div>
+
+<form>
+Company Name  <input type="text" name="company" [(ngModel)]="this.udata.company"/><br>
+User location <input type="text" name="location" [(ngModel)]="this.udata.location"/><br>
+
+</form>
+<ng-template [ngIf]="this.udata.company.length!=0 && this.udata.location.length!=0"
+     [ngIfElse]= "incorrect">
+     <b>Input are correct</b>
+</ng-template>
+
+
+
+
+<ng-template #incorrect>
+
+  <b>Loacation and Company are mandatory</b>
+</ng-template>
+
+<select size="1" [(ngModel)]="state">
+  <option value="tn">Tamil Nadu</option>
+  <option value="kl">Kerala</option>
+  <option value="ap">Andhara pradesh</option>
+  <option value="up">Uttar Pradesh</option>
+</select>
+<div [ngSwitch]="this.state">
+  <ul *ngSwitchCase="'tn'">
+    <li>Chennai</li>
+    <li>Salem</li>
+    <li>Trichy</li>
+    </ul>
+    <ul *ngSwitchCase="'kl'">
+      <li>kochi</li>
+      <li>Ernakulam</li>
+      <li>Palakad</li>
+      </ul>
+      <ul *ngSwitchCase="'ap'">
+        <li>tirupati</li>
+        <li>hyderabad</li>
+        <li>vishakapatnam</li>
+        </ul>
+        <ul *ngSwitchCase="'up'">
+          <li>Lucknow</li>
+          <li>Allahabad</li>
+          <li>Kanpur</li>
+          </ul>
+</div>
+

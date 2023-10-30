@@ -1,0 +1,35 @@
+.ocean{
+    background-color: skyblue;
+    width: 500px;
+    height: 400px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: brown;
+}
+.forest{
+    background-color: aquamarine;
+    width: 500px;
+    height: 400px;
+    font-family: 'helvetica';
+    color:blue;
+
+}
+.cloud{
+    background-color:blueviolet;
+    width: 500px;
+    height: 400px;
+    font-family: 'fantasy';
+    color:rgb(0, 255, 0);
+}
+
+.red{
+    background-color: red;
+    color: white;
+}
+.green{
+    background-color: green;
+    color: white;
+}
+.blue{
+    background-color: blue;
+    color: white;
+}
