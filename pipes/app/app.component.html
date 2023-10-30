@@ -1,0 +1,15 @@
+
+
+First Name{{this.udata.firstName | uppercase}}<br>
+Last Name{{this.udata.lastName | uppercase}}<br>
+Location{{this.udata.location | titlecase}}<br>
+Company{{this.udata.company | lowercase}}<br>
+Salary{{this.udata.salary | currency:'INR'}}<br>
+firstName{{this.udata.firstName | slice:3}}<br>
+firstName{{this.udata.firstName | json}}<br>
+join date{{this.udata.dateofjoining | date:'fullDate'}}<br>
+join time{{this.udata.dateofjoining | date:'fullTime'}}<br>
+join time{{this.udata.dateofjoining | date:'shortTime'}}<br>
+Time formaat{{this.udata.dateofjoining | date:'h:mm a'}}<br>
+
+<router-outlet></router-outlet>
